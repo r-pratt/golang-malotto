@@ -7,27 +7,26 @@
 package drawings
 
 import (
+	"../client"
 	"net/http"
 	"net/url"
-	"../client"
 )
 
-func CreateDrawingRequest(date string, game Game) (req *http.Request, err error){
+func CreateDrawingRequest(date string, game Game) (req *http.Request, err error) {
 	params := url.Values{}
-	params.Set("draw_date",date)
+	params.Set("draw_date", date)
 
-	reqUrl,err := url.Parse(client.ApiHost + drawResultsUrlPath + "/" + string(game))
-	if err != nil{
+	reqUrl, err := url.Parse(client.ApiHost + drawResultsUrlPath + "/" + string(game))
+	if err != nil {
 		return
 	}
 
 	reqUrl.RawQuery = params.Encode()
 
 	req = &http.Request{
-		URL: reqUrl,
+		URL:    reqUrl,
 		Method: "GET",
-		Form: params,
+		Form:   params,
 	}
 	return
 }
-
