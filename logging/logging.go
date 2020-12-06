@@ -1,3 +1,9 @@
+/*
+	@author: Robert Pratt <robert.pratt[at]homelab.farm>
+	@package: logging
+	@description: logging wrapper
+	@created: 2020-12-05
+*/
 package logging
 
 import (
