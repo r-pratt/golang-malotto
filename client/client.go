@@ -20,7 +20,3 @@ func CreateLottoClient() (client *http.Client) {
 	}
 	return
 }
-
-func CreateDrawingRequest(game string, date string) {
-
-}
